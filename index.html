@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Music Folder — Support</title>
+<meta name="description" content="Report a bug or request a feature for Music Folder: Sheet Music.">
+<meta name="theme-color" content="#FF9B69">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Ambient gradient blob -->
+<div class="ambient" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand-icon">
+      <img src="icon.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <rect width="100" height="100" rx="22" fill="#FF9B69"/>
+        <g fill="#0A0A0A">
+          <rect x="48" y="22" width="4" height="58"/>
+          <path d="M22 30 L36 26 L36 60 L22 64 Z M64 26 L78 30 L78 64 L64 60 Z"/>
+          <rect x="32" y="34" width="36" height="2"/>
+          <rect x="32" y="40" width="36" height="2"/>
+          <rect x="32" y="46" width="36" height="2"/>
+          <rect x="20" y="78" width="60" height="3"/>
+        </g>
+        <g fill="#fff">
+          <path d="M26 30 L36 27 L36 58 L26 61 Z M64 27 L74 30 L74 61 L64 58 Z"/>
+          <rect x="30" y="34" width="8" height="1" fill="#0A0A0A"/>
+          <rect x="30" y="38" width="8" height="1" fill="#0A0A0A"/>
+          <rect x="30" y="42" width="8" height="1" fill="#0A0A0A"/>
+          <rect x="62" y="34" width="8" height="1" fill="#0A0A0A"/>
+          <rect x="62" y="38" width="8" height="1" fill="#0A0A0A"/>
+          <rect x="62" y="42" width="8" height="1" fill="#0A0A0A"/>
+        </g>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-name">Music Folder</span>
+      <span class="brand-sub">Support</span>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a href="#form">Report</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>How can we<br><span class="gradient-text">help you?</span></h1>
+    <p class="lede">Run into a bug or have an idea to make Music Folder better? Send it our way — every report shapes the next update.</p>
+    <div class="hero-actions">
+      <a href="#form" class="btn btn-primary">
+        Report an issue
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+      </a>
+      <a href="#faq" class="btn btn-ghost">Read FAQ</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>2.1.2</strong>
+        <span>Latest version</span>
+      </div>
+      <div class="stat">
+        <strong>4+</strong>
+        <span>Age rating</span>
+      </div>
+      <div class="stat">
+        <strong>iOS / iPadOS</strong>
+        <span>Supported</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="form" class="form-section">
+    <div class="form-header">
+      <span class="section-tag">Report a Report</span>
+      <h2>Tell us what's happening</h2>
+      <p>The more detail you share, the faster we can fix it. Only the marked fields are required.</p>
+    </div>
+
+    <form id="issueForm" novalidate>
+
+      <!-- Step indicator -->
+      <div class="steps">
+        <div class="step active" data-step="1"><span>1</span> About you</div>
+        <div class="step" data-step="2"><span>2</span> The issue</div>
+        <div class="step" data-step="3"><span>3</span> Reproducing</div>
+        <div class="step" data-step="4"><span>4</span> Your setup</div>
+      </div>
+
+      <fieldset>
+        <legend>About you</legend>
+
+        <div class="row">
+          <div class="field">
+            <label for="name">Name <span class="optional">Optional</span></label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">Required</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            <small>So we can follow up directly with you.</small>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>The issue</legend>
+
+        <div class="field">
+          <label>Type <span class="req">Required</span></label>
+          <div class="type-grid" role="radiogroup">
+            <label class="type-card">
+              <input type="radio" name="type" value="Bug" required />
+              <div class="type-card-inner">
+                <span class="type-icon">🐛</span>
+                <span class="type-label">Bug</span>
+                <span class="type-desc">Something isn't working</span>
+              </div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="type" value="Feature request" />
+              <div class="type-card-inner">
+                <span class="type-icon">✨</span>
+                <span class="type-label">Feature</span>
+                <span class="type-desc">Suggest an improvement</span>
+              </div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="type" value="Question" />
+              <div class="type-card-inner">
+                <span class="type-icon">💬</span>
+                <span class="type-label">Question</span>
+                <span class="type-desc">Need help using the app</span>
+              </div>
+            </label>
+            <label class="type-card">
+              <input type="radio" name="type" value="Other" />
+              <div class="type-card-inner">
+                <span class="type-icon">📮</span>
+                <span class="type-label">Other</span>
+                <span class="type-desc">Something else</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="title">Short summary <span class="req">Required</span></label>
+          <input type="text" id="title" name="title" maxlength="120" required 
+                 placeholder="App freezes when opening a shared music book" />
+        </div>
+
+        <div class="field">
+          <label for="description">Description <span class="req">Required</span></label>
+          <textarea id="description" name="description" rows="4" required
+                    placeholder="What happened? What were you trying to do?"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="severity">Severity</label>
+            <select id="severity" name="severity">
+              <option value="">Choose…</option>
+              <option value="Critical">🔴 Critical — app unusable</option>
+              <option value="High">🟠 High — major feature broken</option>
+              <option value="Medium">🟡 Medium — workaround exists</option>
+              <option value="Low">🟢 Low — minor or cosmetic</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="frequency">Frequency</label>
+            <select id="frequency" name="frequency">
+              <option value="">Choose…</option>
+              <option value="Always">Always happens</option>
+              <option value="Sometimes">Sometimes</option>
+              <option value="Once">Just once</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Reproducing it</legend>
+
+        <div class="field">
+          <label for="steps">Steps to reproduce</label>
+          <textarea id="steps" name="steps" rows="4"
+                    placeholder="1. Open the app&#10;2. Tap on a song&#10;3. ..."></textarea>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="expected">Expected</label>
+            <textarea id="expected" name="expected" rows="2"
+                      placeholder="What should have happened?"></textarea>
+          </div>
+          <div class="field">
+            <label for="actual">Actual</label>
+            <textarea id="actual" name="actual" rows="2"
+                      placeholder="What actually happened?"></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your setup</legend>
+
+        <div class="row three">
+          <div class="field">
+            <label for="device">Device</label>
+            <input type="text" id="device" name="device" placeholder="iPhone 15 Pro" />
+          </div>
+          <div class="field">
+            <label for="ios">iOS version</label>
+            <input type="text" id="ios" name="ios" placeholder="17.4" />
+          </div>
+          <div class="field">
+            <label for="appVersion">App version</label>
+            <input type="text" id="appVersion" name="appVersion" placeholder="2.1.2" />
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="4"/>
+              <circle cx="8.5" cy="9.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <div>
+            <strong>Got a screenshot or recording?</strong>
+            <p>You'll be able to attach it directly in your email after clicking Submit.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="submit-row">
+        <button type="submit" class="btn btn-primary btn-large">
+          <span>Submit Report</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <p class="submit-note">Your email app will open with everything pre-filled. Just review and tap Send.</p>
+      </div>
+
+      <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <span class="section-tag">FAQ</span>
+    <h2>Common questions</h2>
+    <div class="faq-grid">
+      <details>
+        <summary>
+          <span>What happens after I click Submit?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Your default email app (Mail, Gmail, Outlook, etc.) will open with all of your information pre-filled and addressed to the developer. Just review it, attach any screenshots if you have them, and tap Send.</p>
+      </details>
+      <details>
+        <summary>
+          <span>How long until I hear back?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Music Folder is maintained by a single developer. Most reports receive a first response within a few days. Critical bugs are prioritized.</p>
+      </details>
+      <details>
+        <summary>
+          <span>Is my information kept private?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Yes. The email is sent only to the developer. Your email address is used solely to follow up about your issue.</p>
+      </details>
+      <details>
+        <summary>
+          <span>The email app didn't open. What now?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Email <a href="mailto:musicfolder.app@gmail.com">musicfolder.app@gmail.com</a> directly with your details. This can happen if no default email app is set up on your device.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-icon small">
+        <img src="icon.png" alt="" onerror="this.style.display='none';" />
+      </div>
+      <div>
+        <p class="footer-title">Music Folder: Sheet Music</p>
+        <p class="footer-sub">Made for musicians who play</p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <a href="mailto:musicfolder.app@gmail.com">musicfolder.app@gmail.com</a>
+      <span>© <span id="year"></span> Matthew Mikulich</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
