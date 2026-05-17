@@ -23,11 +23,9 @@ The page picks up your app's identity:
 - **Brand orange** (`#FF9B69`) pulled directly from the app icon, used as accent gradient and on focused states
 - **Inter** typeface — same family Apple uses in marketing, clean and modern
 - **iOS-style pill buttons, rounded surfaces, soft shadows** — feels native to the platform
-- **Live status badge** ("Online & responding") for trust
 - **Type cards** (Bug / Feature / Question / Other) instead of a plain dropdown
-- **Step indicator** at the top of the form that highlights your current section as you tab through
+- **Mobile-optimized** for iPhone and iPad with safe-area support and 44pt tap targets
 - Smooth fade-in animations on load
-- Fully responsive on phones
 
 ---
 
@@ -91,7 +89,6 @@ present(safari, animated: true)
 | Form fields | `index.html` — then add them to the email body in `script.js` |
 | FAQ items | `index.html` — `<details>` blocks at the bottom |
 | App icon | Replace `icon.png` (square, any size) |
-| Current version shown in hero stats | `index.html` — search for `2.1.2` |
 
 ---
 
