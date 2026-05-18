@@ -52,28 +52,170 @@
     </div>
   </div>
   <nav class="site-nav">
-    <a href="#form">Report</a>
     <a href="#faq">FAQ</a>
+    <a href="#form">Report</a>
   </nav>
 </header>
 
 <main>
   <section class="hero">
-    <h1>How can we<br><span class="gradient-text">help you?</span></h1>
-    <p class="lede">Run into a bug or have an idea to make Music Folder better? Send it our way — every report shapes the next update.</p>
+    <h1>Talk to the<br><span class="gradient-text">developer.</span></h1>
+    <p class="lede">Run into a bug or have an idea to make Music Folder better? Send it my way — every report shapes the next update.</p>
     <div class="hero-actions">
-      <a href="#form" class="btn btn-primary">
-        Report an issue
+      <a href="#faq" class="btn btn-primary">
+        Browse FAQ
         <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
       </a>
-      <a href="#faq" class="btn btn-ghost">Read FAQ</a>
+      <a href="#form" class="btn btn-ghost">Report an issue</a>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <span class="section-tag">FAQ</span>
+    <h2>Common questions</h2>
+    <p class="faq-intro">Most answers are right here. If yours isn't, scroll down to send me a message directly.</p>
+
+    <div class="faq-grid">
+
+      <h3 class="faq-group">Getting oriented</h3>
+
+      <details>
+        <summary>
+          <span>What is Music Folder?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Music Folder is a digital sheet music app for musicians and bands. Store your PDFs, organize them into groups, build set lists for performances, annotate scores with Apple Pencil, use a built-in metronome, and sync everything across your iPad and iPhone via iCloud.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>Which devices does it support?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>iPhone and iPad running iOS 13.2 or later. iPad is the primary recommended device because of its larger screen for reading sheet music. The new iPad design (iOS 18+) and Liquid Glass (iOS 26) are both supported.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>How much does Music Folder cost?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>The app is free to download with a 10-song limit. Premium is a one-time purchase (no subscription) that unlocks unlimited songs, unlimited groups, unlimited music books, the metronome, and iCloud sync. The exact price shown in-app reflects your local App Store pricing.</p>
+      </details>
+
+      <h3 class="faq-group">Core concepts</h3>
+
+      <details>
+        <summary>
+          <span>What's the difference between a Song and a Book?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>A Song is a single piece of music (one or more pages of the same song). A Book is a multi-song collection — a hymnal, fakebook, or any PDF that contains many songs. Books support bookmarks so you can mark and quickly jump to individual songs within the book.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>What's a Set List?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>A Set List is an ordered list of songs you'll play in sequence at a performance. During playback, all the songs are combined into one continuous document so you can swipe between them without leaving the screen.</p>
+      </details>
+
+      <h3 class="faq-group">Importing your music</h3>
+
+      <details>
+        <summary>
+          <span>Can I import multiple PDFs at once?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Yes. Songs tab → + → Import → tap Add Files, then select multiple PDFs in the file picker.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>Can I import a music book (multiple songs in one PDF)?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Yes. When adding a new item, switch the "Song / Book" toggle to "Book." Books support multi-page navigation and bookmarks for individual songs within them.</p>
+      </details>
+
+      <h3 class="faq-group">Using the app</h3>
+
+      <details>
+        <summary>
+          <span>Can I include a bookmark in a set list?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Yes. When building a set list, you can add either a full song or a specific bookmark from a book. The set list will play only the bookmarked pages.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>How do I annotate sheet music with Apple Pencil?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Open a song → tap the pencil icon in the toolbar. Draw, highlight, or write with Apple Pencil or your finger. Tap the pencil again (iPad) or the orange checkmark (iPhone) to save and exit. Annotations sync to your other devices via iCloud.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>How do I use the metronome?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Open any song and tap the metronome icon in the bottom toolbar. Set the song's tempo (BPM) when adding or editing the song — the metronome will use that tempo automatically each time. The metronome plays even when your device is on silent. (Metronome is a Premium feature.)</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>How do I share a song, group, or set list with my bandmate?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Open the song/group/set list → tap the share icon (or ⋯ → Share). The app creates a .mfsong, .mfgroup, or .mfsetlist file. AirDrop, email, or send through any messaging app — the recipient opens it and Music Folder auto-imports everything.</p>
+      </details>
+
+      <h3 class="faq-group">iCloud sync</h3>
+
+      <details>
+        <summary>
+          <span>How do I sync songs across my iPad and iPhone?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>You need Premium and the same iCloud account signed in on both devices. In iOS Settings → [Your Name] → iCloud → make sure iCloud Drive is ON and Music Folder is enabled under it. Sync happens automatically in the background.</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>My songs aren't syncing. What's wrong?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Check, in order: (1) same iCloud account on both devices, (2) iCloud Drive is on, (3) Music Folder is enabled under iCloud Drive, (4) Premium is active, (5) the internet is working. Initial sync for large libraries can take several minutes.</p>
+      </details>
+
+      <h3 class="faq-group">Privacy</h3>
+
+      <details>
+        <summary>
+          <span>What data does Music Folder collect?</span>
+          <span class="chevron"></span>
+        </summary>
+        <p>Music Folder doesn't collect any personal data. Your sheet music, groups, set lists, and annotations are stored in your iCloud account. There are no servers that hold your content.</p>
+      </details>
+
+    </div>
+
+    <div class="faq-bridge">
+      <p>Didn't find what you were looking for?</p>
+      <a href="#form" class="btn btn-primary">
+        Send me a message
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+      </a>
     </div>
   </section>
 
   <section id="form" class="form-section">
     <div class="form-header">
-      <h2>Tell us what's happening</h2>
-      <p>The more detail you share, the faster we can fix it. Only the marked fields are required.</p>
+      <h2>Tell me what's happening</h2>
+      <p>The more detail you share, the faster I can fix it. Only the marked fields are required.</p>
     </div>
 
     <form id="issueForm" novalidate>
@@ -97,7 +239,7 @@
           <div class="field">
             <label for="email">Email <span class="req">Required</span></label>
             <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required />
-            <small>So we can follow up directly with you.</small>
+            <small>So I can follow up directly with you.</small>
           </div>
         </div>
       </fieldset>
@@ -246,41 +388,6 @@
 
       <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
     </form>
-  </section>
-
-  <section id="faq" class="faq-section">
-    <span class="section-tag">FAQ</span>
-    <h2>Common questions</h2>
-    <div class="faq-grid">
-      <details>
-        <summary>
-          <span>What happens after I click Submit?</span>
-          <span class="chevron"></span>
-        </summary>
-        <p>Your default email app (Mail, Gmail, Outlook, etc.) will open with all of your information pre-filled and addressed to the developer. Just review it, attach any screenshots if you have them, and tap Send.</p>
-      </details>
-      <details>
-        <summary>
-          <span>How long until I hear back?</span>
-          <span class="chevron"></span>
-        </summary>
-        <p>Music Folder is maintained by a single developer. Most reports receive a first response within a few days. Critical bugs are prioritized.</p>
-      </details>
-      <details>
-        <summary>
-          <span>Is my information kept private?</span>
-          <span class="chevron"></span>
-        </summary>
-        <p>Yes. The email is sent only to the developer. Your email address is used solely to follow up about your issue.</p>
-      </details>
-      <details>
-        <summary>
-          <span>The email app didn't open. What now?</span>
-          <span class="chevron"></span>
-        </summary>
-        <p>Email <a href="mailto:musicfolder.app@gmail.com">musicfolder.app@gmail.com</a> directly with your details. This can happen if no default email app is set up on your device.</p>
-      </details>
-    </div>
   </section>
 </main>
 
