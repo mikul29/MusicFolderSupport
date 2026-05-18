@@ -3,35 +3,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const form = document.getElementById('issueForm');
 const status = document.getElementById('formStatus');
-const steps = document.querySelectorAll('.step');
-
-// Map fieldset position → step index
-const fieldsetByStep = Array.from(form.querySelectorAll('fieldset'));
-
-// Update active step based on which fieldset the focused field belongs to
-function updateActiveStep(activeFieldset) {
-  const idx = fieldsetByStep.indexOf(activeFieldset);
-  if (idx === -1) return;
-  steps.forEach((s, i) => s.classList.toggle('active', i === idx));
-}
-
-form.addEventListener('focusin', (e) => {
-  const fs = e.target.closest('fieldset');
-  if (fs) updateActiveStep(fs);
-});
-
-// Let the step buttons scroll to the matching fieldset
-steps.forEach((step, i) => {
-  step.addEventListener('click', () => {
-    const fs = fieldsetByStep[i];
-    if (fs) {
-      fs.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      const firstField = fs.querySelector('input, select, textarea');
-      if (firstField) setTimeout(() => firstField.focus({ preventScroll: true }), 400);
-    }
-  });
-  step.style.cursor = 'pointer';
-});
 
 // Clear invalid styling when user fixes the field
 form.addEventListener('input', (e) => {
