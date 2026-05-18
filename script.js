@@ -95,11 +95,8 @@ form.addEventListener('submit', (e) => {
   const type        = getRadio('type');
   const title       = get('title');
   const description = get('description');
-  const severity    = get('severity');
   const frequency   = get('frequency');
   const stepsField  = get('steps');
-  const expected    = get('expected');
-  const actual      = get('actual');
   const device      = get('device');
   const ios         = get('ios');
   const appVersion  = get('appVersion');
@@ -118,30 +115,16 @@ form.addEventListener('submit', (e) => {
   lines.push('— The Issue —');
   lines.push(`Type: ${type}`);
   lines.push(`Summary: ${title}`);
-  if (severity)  lines.push(`Severity: ${severity}`);
   if (frequency) lines.push(`Frequency: ${frequency}`);
   lines.push('');
   lines.push('Description:');
   lines.push(description);
   lines.push('');
 
-  if (stepsField || expected || actual) {
-    lines.push('— Reproducing It —');
-    if (stepsField) {
-      lines.push('Steps to reproduce:');
-      lines.push(stepsField);
-      lines.push('');
-    }
-    if (expected) {
-      lines.push('Expected:');
-      lines.push(expected);
-      lines.push('');
-    }
-    if (actual) {
-      lines.push('Actual:');
-      lines.push(actual);
-      lines.push('');
-    }
+  if (stepsField) {
+    lines.push('Steps to reproduce:');
+    lines.push(stepsField);
+    lines.push('');
   }
 
   if (device || ios || appVersion) {
