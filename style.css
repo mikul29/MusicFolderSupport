@@ -301,58 +301,6 @@ main {
   margin: 0 auto;
 }
 
-/* Steps indicator */
-.steps {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.4rem;
-  background: var(--surface-soft);
-  border-radius: 999px;
-  margin-bottom: 2.5rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.steps::-webkit-scrollbar { display: none; }
-
-.step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink-3);
-  white-space: nowrap;
-  transition: background 0.25s ease, color 0.25s ease;
-  flex-shrink: 0;
-}
-
-.step span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(10, 10, 10, 0.06);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--ink-3);
-}
-
-.step.active {
-  background: var(--ink);
-  color: #fff;
-}
-
-.step.active span {
-  background: var(--orange);
-  color: var(--ink);
-}
-
 /* Fieldsets */
 fieldset {
   border: none;
@@ -893,27 +841,6 @@ footer {
     text-wrap: balance;
   }
 
-  /* Steps: smaller pills, more scrollable */
-  .steps {
-    margin-bottom: 1.75rem;
-    padding: 0.3rem;
-    -webkit-overflow-scrolling: touch;
-  }
-  .step {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.8rem;
-  }
-  .step span {
-    width: 20px;
-    height: 20px;
-    font-size: 0.66rem;
-  }
-
-  /* Hide step pills on mobile — fieldset legends provide clear structure already */
-  .steps {
-    display: none;
-  }
-
   /* Stack all rows */
   .row, .row.three { grid-template-columns: 1fr; gap: 0.5rem; }
 
@@ -1069,8 +996,7 @@ footer {
   .site-nav a,
   .btn,
   details summary,
-  .type-card,
-  .step {
+  .type-card {
     min-height: 44px;
   }
   /* Remove hover-only effects on touch devices */
