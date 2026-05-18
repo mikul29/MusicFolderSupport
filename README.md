@@ -1,8 +1,29 @@
 # Music Folder — Support Portal
 
-A modern, App Store-inspired support intake page for **Music Folder: Sheet Music**. Users submit bug reports and feature requests, and their default email app opens with everything pre-filled and addressed to **musicfolder.app@gmail.com**.
+A modern, App Store-inspired support intake page for **Music Folder: Sheet Music**. Users submit bug reports and feature requests, and the report arrives directly in **musicfolder.app@gmail.com** via Web3Forms — no email app required, no redirect.
 
-No backend. No services. No accounts. Free to host on GitHub Pages.
+Free to host on GitHub Pages. No backend code to maintain.
+
+---
+
+## ⚠️ One-time setup before deploying
+
+This site uses **[Web3Forms](https://web3forms.com)** (free, 250 submissions/month) to forward form submissions to your email.
+
+1. Go to [web3forms.com](https://web3forms.com)
+2. Click **Create your Access Key**
+3. Enter your email: `musicfolder.app@gmail.com`
+4. Check that inbox — you'll get an access key (a long string)
+5. Open `index.html` and find this line:
+   ```html
+   <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+   ```
+6. Replace `YOUR_ACCESS_KEY_HERE` with your actual key
+7. Save and upload to GitHub
+
+That's it — submissions will start flowing into your Gmail.
+
+**Don't worry about exposing the access key.** Web3Forms says it's safe to be public; it only forwards to the email it was created for.
 
 ---
 
@@ -10,7 +31,7 @@ No backend. No services. No accounts. Free to host on GitHub Pages.
 
 - `index.html` — the page itself
 - `style.css` — the design system (Inter font, your brand orange, iOS-style rounded surfaces)
-- `script.js` — form handling and email composition
+- `script.js` — form handling and submission
 - `icon.png` — your app icon (used in the header and footer)
 - `README.md` — this file
 
