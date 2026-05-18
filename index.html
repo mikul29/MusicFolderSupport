@@ -59,7 +59,7 @@
 
 <main>
   <section class="hero">
-    <h1>Talk to the<br><span class="gradient-text">developer</span></h1>
+    <h1>Talk to the<br><span class="gradient-text">developer.</span></h1>
     <p class="lede">Run into a bug or have an idea to make Music Folder better? Send it my way — every report shapes the next update.</p>
     <div class="hero-actions">
       <a href="#faq" class="btn btn-primary">
@@ -224,8 +224,7 @@
       <div class="steps">
         <div class="step active" data-step="1"><span>1</span> About you</div>
         <div class="step" data-step="2"><span>2</span> The issue</div>
-        <div class="step" data-step="3"><span>3</span> Reproducing</div>
-        <div class="step" data-step="4"><span>4</span> Your setup</div>
+        <div class="step" data-step="3"><span>3</span> Your setup</div>
       </div>
 
       <fieldset>
@@ -253,7 +252,7 @@
             <label class="type-card">
               <input type="radio" name="type" value="Bug" required />
               <div class="type-card-inner">
-                <span class="type-icon">🐛</span>
+                <span class="type-icon">⚠️</span>
                 <span class="type-label">Bug</span>
                 <span class="type-desc">Something isn't working</span>
               </div>
@@ -297,49 +296,20 @@
                     placeholder="What happened? What were you trying to do?"></textarea>
         </div>
 
-        <div class="row">
-          <div class="field">
-            <label for="severity">Severity</label>
-            <select id="severity" name="severity">
-              <option value="">Choose…</option>
-              <option value="Critical">🔴 Critical — app unusable</option>
-              <option value="High">🟠 High — major feature broken</option>
-              <option value="Medium">🟡 Medium — workaround exists</option>
-              <option value="Low">🟢 Low — minor or cosmetic</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="frequency">Frequency</label>
-            <select id="frequency" name="frequency">
-              <option value="">Choose…</option>
-              <option value="Always">Always happens</option>
-              <option value="Sometimes">Sometimes</option>
-              <option value="Once">Just once</option>
-            </select>
-          </div>
+        <div class="field">
+          <label for="frequency">Frequency</label>
+          <select id="frequency" name="frequency">
+            <option value="">Choose…</option>
+            <option value="Always">Always happens</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="Once">Just once</option>
+          </select>
         </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Reproducing it</legend>
 
         <div class="field">
-          <label for="steps">Steps to reproduce</label>
+          <label for="steps">Steps to reproduce <span class="optional">Optional</span></label>
           <textarea id="steps" name="steps" rows="4"
                     placeholder="1. Open the app&#10;2. Tap on a song&#10;3. ..."></textarea>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label for="expected">Expected</label>
-            <textarea id="expected" name="expected" rows="2"
-                      placeholder="What should have happened?"></textarea>
-          </div>
-          <div class="field">
-            <label for="actual">Actual</label>
-            <textarea id="actual" name="actual" rows="2"
-                      placeholder="What actually happened?"></textarea>
-          </div>
         </div>
       </fieldset>
 
