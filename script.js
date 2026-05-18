@@ -5,8 +5,6 @@ const form = document.getElementById('issueForm');
 const status = document.getElementById('formStatus');
 const steps = document.querySelectorAll('.step');
 
-const RECIPIENT = 'musicfolder.app@gmail.com';
-
 // Map fieldset position → step index
 const fieldsetByStep = Array.from(form.querySelectorAll('fieldset'));
 
@@ -50,7 +48,7 @@ form.addEventListener('change', (e) => {
   }
 });
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   status.className = 'form-status';
   status.textContent = '';
@@ -101,10 +99,7 @@ form.addEventListener('submit', (e) => {
   const ios         = get('ios');
   const appVersion  = get('appVersion');
 
-  // Email subject: prefix with type for filtering
-  const subject = `[${type}] ${title}`;
-
-  // Build the body
+  // Build a clean, readable message body that arrives in your inbox
   const lines = [];
   lines.push('━━━ MUSIC FOLDER SUPPORT REQUEST ━━━');
   lines.push('');
@@ -137,24 +132,51 @@ form.addEventListener('submit', (e) => {
 
   lines.push('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
   lines.push('Sent from the Music Folder support portal.');
-  lines.push('Please attach any screenshots or recordings before sending.');
 
-  const body = lines.join('\n');
+  // Submit to Web3Forms
+  const submitBtn = form.querySelector('.submit-btn');
+  const btnText = submitBtn?.querySelector('span');
+  const originalText = btnText?.textContent;
+  if (submitBtn) submitBtn.disabled = true;
+  if (btnText) btnText.textContent = 'Sending…';
 
-  const mailto = `mailto:${RECIPIENT}`
-    + `?subject=${encodeURIComponent(subject)}`
-    + `&body=${encodeURIComponent(body)}`;
+  try {
+    const formData = new FormData(form);
 
-  // iOS Mail has a ~2000 char mailto limit
-  if (mailto.length > 1900) {
+    // Override the subject and message with our nicely-formatted versions
+    formData.set('subject', `[${type}] ${title}`);
+    formData.set('message', lines.join('\n'));
+    // Set replyto so the inbox lets you reply to the user directly
+    if (email) formData.set('replyto', email);
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      form.reset();
+      status.className = 'form-status success';
+      status.innerHTML = '✓ Report sent. Thanks — I\'ll be in touch soon.';
+      if (btnText) btnText.textContent = 'Sent ✓';
+      setTimeout(() => {
+        if (btnText && originalText) btnText.textContent = originalText;
+        if (submitBtn) submitBtn.disabled = false;
+      }, 4000);
+    } else {
+      status.className = 'form-status error';
+      status.innerHTML = (data.message || 'Something went wrong.') + ' Please try emailing <a href="mailto:musicfolder.app@gmail.com" style="color:inherit;text-decoration:underline">musicfolder.app@gmail.com</a> directly.';
+      if (btnText && originalText) btnText.textContent = originalText;
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  } catch (err) {
     status.className = 'form-status error';
-    status.innerHTML = 'Your report is quite long — please trim some details, or email <a href="mailto:musicfolder.app@gmail.com" style="color:inherit;text-decoration:underline">musicfolder.app@gmail.com</a> directly.';
-    return;
+    status.innerHTML = 'Network error. Please check your connection or email <a href="mailto:musicfolder.app@gmail.com" style="color:inherit;text-decoration:underline">musicfolder.app@gmail.com</a> directly.';
+    if (btnText && originalText) btnText.textContent = originalText;
+    if (submitBtn) submitBtn.disabled = false;
   }
 
-  window.location.href = mailto;
-
-  status.className = 'form-status success';
-  status.innerHTML = '✓ Your email app should now be open with your report ready to send. Just attach any screenshots and tap Send.';
   status.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
